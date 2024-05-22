@@ -29,6 +29,7 @@ def ft_grey(array: Image.Image) -> list:
     x,y,c = matrix.shape
 
     new_matrix = np.empty((x,y,c),dtype=np.uint8)
-    new_matrix[:,:,:] = matrix[:,:,:1] / 4.70588235294
-    print(new_matrix)
+    new_matrix[:,:,] = sum(matrix[:,:,] / 3)
+    # print(new_matrix)
+    Image._show(Image.fromarray(matrix))
     Image._show(Image.fromarray(new_matrix))
