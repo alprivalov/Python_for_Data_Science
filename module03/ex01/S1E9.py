@@ -1,21 +1,37 @@
 from abc import ABC, abstractmethod
 
+
 class Character(ABC):
-    """Creation du character avec Abstract Base Class"""
-    def __init__(self,first_name,is_alive = True) -> None:
-        """initialise first_name et is_alive a la creation"""
+    """
+1.  Creation du character avec Abstract Base Class
+    """
+    def __init__(self, first_name, is_alive=True) -> None:
+        """
+    1.  Initialise first_name et is_alive à la création
+        """
         self.first_name = first_name
         self.is_alive = is_alive
 
     @abstractmethod
-    def create(self,first_name):
+    def create(self, first_name):
+        """
+    1.  Création d'une méthode abstraite
+        """
         pass
-    
+
     def die(self):
-        """initialise is_alive a false a la call de la methode"""
+        """
+    1.  Initialise is_alive à False lors de l'appel de la méthode
+        """
         self.is_alive = False
 
+
 class Stark(Character):
-    """creation de stark  en class abstraite de Character"""
-    def create(self,first_name):
-        self.first_name = first_name 
+    """
+1.  Création de Stark en classe abstraite de Character
+    """
+    def create(self, first_name):
+        """
+    1.  Méthode d'initialisation de first_name via la méthode abstraite
+        """
+        self.first_name = first_name
