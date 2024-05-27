@@ -1,18 +1,22 @@
-import numpy as np
 
-def give_bmi(height: list[int | float], weight: list[int | float]) -> list[int | float]:
+
+def give_bmi(
+        height: list[int | float],
+        weight: list[int | float]) -> list[int | float]:
     """
-Retourne une liste de valeurs de l'Indice de Masse Corporelle (IMC).
+1.  Retourne une liste de valeurs de l'Indice de Masse Corporelle (IMC).
     """
     bmi = list()
     for i in range(len(height)):
         bmi.append(weight[i]/(height[i] * height[i]))
     return bmi
 
+
 def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
     """
-Prend une liste d'IMC et une limite(en valeur numérique) en entrée,
-et retourne une liste de booléens indiquant si chaque IMC est supérieur à la limite.
+1.  Prend une liste d'IMC et une limite(en valeur numerique) en entrée,
+2.  Indique si chaque IMC est superieur a la limite.
+3.  Retourne une liste de booleens
     """
     result = list()
     for i in bmi:
@@ -22,8 +26,10 @@ et retourne une liste de booléens indiquant si chaque IMC est supérieur à la 
             result.append(False)
     return result
 
+
 def main():
     return 0
+
 
 if __name__ == "__main__":
     main()
