@@ -1,23 +1,21 @@
 import sys
 
-# Fonction pour compter les caractères de ponctuation dans la chaîne
-
 
 def find_nb_punctuation(string):
     """
-        search all puntuation in a string
+search all puntuation in a string
     """
     nb_punctuation = 0
     for char in string:
-        if char in "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~":
+        if char in "!#$%&'()*+,-./:;<=>?@[\\]^_`{|}~":
             nb_punctuation += 1
     return nb_punctuation
 
 
 def building(string):
     """
-        searching for lower case , uppercase,
-        punctuation via find_nb_punctuation function , spaces and digits
+searching for lower case , uppercase,
+punctuation via find_nb_punctuation function , spaces and digits
     """
     number_characters = len(string)
     print("The text contains", number_characters, "characters:")
@@ -26,10 +24,12 @@ def building(string):
     punctuations = find_nb_punctuation(string)
     spaces = sum(1 for c in string if c.isspace())
     digits = sum(1 for c in string if c.isdigit())
-    print(lowercases, " lower letters\n", uppercases,
-          "upper letters\n", punctuations,
-          "punctuation marks\n", spaces,
-          "spaces\n", digits, "digits\n", )
+    print(uppercases, "upper letters\n",
+          lowercases, "lower letters\n",
+          punctuations, "punctuation marks\n",
+          spaces, "spaces\n",
+          digits, "digits\n",
+          )
 
 
 def main():

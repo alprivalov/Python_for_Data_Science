@@ -1,27 +1,25 @@
 from PIL import Image
 import numpy as np
 import math
-def rotate(image: Image.Image, height: int, width: int):
-    print("New shape after slicing: (",height,",",width,",1) or (",height,", ",width,")")
+def rotate(image: Image.Image):
+    """
+1.  charge limage dans la matrisse
+2.  print la shape
+3.  cree une nouvelle matrisse  et inverse l'axe x et y
+    """
+
     matrix = np.array(image)
     print(matrix.shape)
 
     x,y,channel = matrix.shape
-    print(x,y,channel)
-    # print(len_x, len_y)
     new_matrix = np.empty((y,x,channel),dtype=np.uint8)
-    new_x,new_y,new_channel = new_matrix.shape
-    print(new_x,new_y,new_channel)
-    # print(new_matrix)
-    # print(new_matrix)
-    # print(new_matrix.shape)
+    
     for i ,r in enumerate(matrix):
         new_matrix[:,i] = matrix[i]
-    # for ir, r in enumerate(matrix):
-        # for ic in range(len(r)):
-            # new_matrix[ic][ir] = matrix[ir][ic]
 
+    print("New shape after Transpose:",new_matrix.shape)
     print(new_matrix)
+
     img = Image.fromarray(new_matrix)
     img.show()
     
